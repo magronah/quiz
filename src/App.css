@@ -61,3 +61,66 @@
   color: #777;
   font-size: 0.9rem;
 }
+
+
+/* Intro screen layout */
+.intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.intro-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* Responsive 16:9 iframe wrapper */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  padding-top: 56.25%; /* 16:9 */
+}
+.video-wrapper .video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* If you use <video> tag instead of iframe */
+.video-file {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.primary-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-error {
+  color: red;
+  margin: 8px 0;
+}
+
+
+.question-image {
+  width: 50%;
+  max-width: 720px;     /* adjust as you like */
+  height: auto;
+  display: block;
+  margin: 16px 0 18px;  /* space between question and options */
+  border-radius: 14px;
+  object-fit: cover;
+}

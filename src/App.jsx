@@ -28,223 +28,133 @@ async function saveLead(name, email) {
   }
 }
 
+
 const questions = [
   /* questions will be inserted later */
  {
-      question: "How long were you both friends before you started dating?",
+      question: "When you think about marriage, what emotion shows up most often?",
+      image: "/images/q1.png",   
       options: [
-        "We were never friends. It started instantly as a romantic connection.",
-        "Less than 6 months — we barely had meaningful one-on-one interactions.",
-        "About 6 months to a year — we knew each other in a group setting.",
-        "Over a year — we had many deep conversations and shared experiences.",
-        "We were very close friends for years and knew each other deeply."
+        "Fear of making the wrong choice",
+        "Anxiety about whether it will ever happen",
+        "Hope mixed with peace",
+        "Pressure to “figure it out quickly"
       ],
       type: "single"
     },
     {
-      question: "How did the relationship begin?",
+      question: "How would you describe your relationship history right now?",
       options: [
-        "I was emotionally excited and jumped in quickly.",
-        "We both agreed to take it slowly, but it escalated faster than expected.",
-        "It began intentionally, with prayer and conversations.",
-        "I entered because I felt pressured or afraid to miss the opportunity."
+        "I’m still affected by past heartbreak",
+        "I’ve healed, but I’m cautious",
+        "I’ve fully healed and feel emotionally free",
+        "I try not to think about the past at all"
       ],
       type: "single"
     },
     {
-      question: "How much time did you invest into prayer and seeking God beforehand?",
+      question: "When making relationship decisions, what guides you most?",
       options: [
-        "None — I just followed my emotions.",
-        "Very little — I only prayed casually, without waiting on God.",
-        "Some — I asked God for peace but rushed the process.",
-        "Ample — I fasted, prayed consistently, and waited for confirmation."
+        "My emotions and chemistry",
+        "Advice from others",
+        "Prayer and inner peace",
+        "Timing and pressure"
       ],
       type: "single"
     },
     {
-      question: "How much counsel or investigation did you seek before starting the relationship?",
+      question: "How involved is prayer in your search for a spouse?",
       options: [
-        "None — I trusted my own feelings.",
-        "I talked to one or two people briefly.",
-        "I asked a few friends, but not deeply.",
-        "I involved mentors, spiritual leaders, and close friends intentionally."
+        "I pray occasionally",
+        "I pray only when I feel worried",
+        "I intentionally pray and seek God’s guidance",
+        "I struggle to know how to pray about it"
       ],
       type: "single"
     },
     {
-      question: "Did you feel inner peace before and during the relationship?",
+      question: "How open are you to meeting potential partners?",
       options: [
-        "Yes — I felt calm and spiritually grounded about the relationship.",
-        "No — I had consistent unease but ignored it.",
-        "Not really — I had doubts but convinced myself it was fear.",
-        "Peace came and went depending on how the relationship was going."
+        "I prefer to leave it entirely to God",
+        "I’m open but unsure where to start",
+        "I actively engage in healthy opportunities",
+        "I avoid connections due to fear or disappointment"
       ],
       type: "single"
     },
     {
-      question: "Did you notice any red flags before or during the relationship?",
+      question: "How do you feel about receiving recommendations or advice?",
       options: [
-        "Yes — and I ignored or excused them.",
-        "Yes — and I confronted them but stayed anyway.",
-        "No — but in hindsight, I now see them.",
-        "No — the relationship ended for other reasons."
+        "I prefer to decide alone",
+        "I listen but rarely act on advice",
+        "I value wise counsel",
+        "I feel uncomfortable with recommendations"
       ],
       type: "single"
     },
     {
-      question: "Which red flags did you notice? (Select all that apply)",
+      question: "What is your main focus right now?",
       options: [
-        "Temper issues or emotional outbursts",
-        "Dishonesty or secretive behavior",
-        "Spiritually disconnected — we never prayed together",
-        "Manipulation or guilt-tripping",
-        "Pressure to compromise on personal or spiritual values",
-        "Disinterest in your goals, dreams, or calling",
-        "Inconsistency — hot one day, cold the next",
-        "Isolating you from friends or family",
-        "Refused to introduce you to their inner circle",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "Were there signs the relationship wasn’t meant for you?",
-      options: [
-        "Yes — and I recognized them early.",
-        "Yes — but I ignored them to avoid conflict or loneliness.",
-        "Not at first, but I later saw many signs.",
-        "No — it felt right most of the way through."
+        "Finding the right man",
+        "Healing and personal growth",
+        "Building my purpose and identity",
+        "Waiting and trusting God"
       ],
       type: "single"
     },
     {
-      question: "How did you feel emotionally during most of the relationship?",
+      question: "Which statement resonates most with you?",
       options: [
-        "Anxious and afraid of being abandoned",
-        "Confused or emotionally unstable",
-        "Happy and safe",
-        "Emotionally dependent or idolizing the person",
-        "Other"
+        "Marriage will complete me",
+        "Marriage is a partnership, not a solution",
+        "I fear marriage may limit me",
+        "I haven’t thought deeply about it"
       ],
       type: "single"
     },
     {
-      question: "What were your own contributions to the challenges in this relationship? (Check all that apply)",
+      question: "How do you approach self-presentation?",
       options: [
-        "Ignored warning signs",
-        "Lied or hid truths to avoid conflict",
-        "Didn’t set or maintain boundaries",
-        "Became emotionally dependent",
-        "Manipulated emotionally instead of communicating",
-        "Overlooked my own relationship with God",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "At what point did you realize the relationship was going to end?",
-      options: [
-        "After repeated conflicts that never got resolved",
-        "After discovering dishonesty or betrayal",
-        "After feeling like I lost myself in the relationship",
-        "After seeking counsel or praying and realizing God was saying ‘no’",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "How did the relationship end?",
-      options: [
-        "I ended it after a painful realization",
-        "They ended it — I felt abandoned",
-        "We agreed mutually but it was still difficult",
-        "It ended without closure or explanation"
+        "I dress to attract attention",
+        "I dress modestly but without confidence",
+        "I present myself with dignity and confidence",
+        "I struggle to find balance"
       ],
       type: "single"
     },
     {
-      question: "What pain or fear from past relationships may have affected this one?",
+      question: "If a man shows interest but doesn’t commit, what do you usually do?",
       options: [
-        "Fear of being alone",
-        "Rejection or abandonment from childhood",
-        "Unresolved trauma from previous relationships",
-        "I don't know, but I think my past played a role",
-        "None"
+        "Wait and hope he proposes",
+        "Confront him immediately",
+        "Set boundaries and seek clarity",
+        "Feel confused and emotionally drained"
       ],
       type: "single"
-    },
-    {
-      question: "What lessons have you learned from this relationship? (Check all that apply)",
-      options: [
-        "Compatibility is not the same as calling",
-        "Emotional attraction is not enough",
-        "Accountability and prayer are critical",
-        "Peace from God is not optional",
-        "Red flags don't disappear with time",
-        "True love does not require me to lose myself",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "What would you do differently next time? (Select all that apply)",
-      options: [
-        "Pray and wait longer before saying yes",
-        "Involve mentors and wise friends early",
-        "Set and communicate clear boundaries",
-        "Trust my gut and the Holy Spirit",
-        "Take emotional healing seriously before entering a relationship",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "What does forgiveness look like in this situation? (Select all that apply)",
-      options: [
-        "Letting go of bitterness toward them",
-        "Releasing myself from guilt or shame",
-        "Praying for the person without holding offense",
-        "Accepting closure and choosing to heal",
-        "I’m still working through forgiveness",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "What strengths are you discovering in yourself now? (Select all that apply)",
-      options: [
-        "I am more self-aware",
-        "I’m learning to trust God more",
-        "I know how to set better boundaries",
-        "I now value accountability and wise counsel",
-        "I am learning to love myself in a healthy way",
-        "Other"
-      ],
-      type: "multiple"
-    },
-    {
-      question: "What are your next steps in healing? (Select all that apply)",
-      options: [
-        "Take time to be alone and rebuild",
-        "Reconnect with God on a deeper level",
-        "Forgive and release the past",
-        "Seek therapy, counseling, or mentorship",
-        "Journal, rest, and reflect",
-        "Begin new healthy relationships with caution and prayer",
-        "Other"
-      ],
-      type: "multiple"
     }
   ];
 
  function App() {
+    // NEW: gate the intro screen
+  const [showIntro, setShowIntro] = useState(true);
+
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState(questions.map(q => q.type === "multiple" ? [] : ""));
   const [otherAnswers, setOtherAnswers] = useState(questions.map(() => ""));
   const [submitted, setSubmitted] = useState(false);
 
+
   // New: track quiz start and user info
   const [quizStarted, setQuizStarted] = useState(false);
+  //const [name, setName] = useState("");
+  //const [email, setEmail] = useState("");
+  //const [formError, setFormError] = useState("");
+
+  // Lead capture (now happens at the end)
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  //const [leadSaved, setLeadSaved] = useState(false);
+  const [savingLead, setSavingLead] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState("");
@@ -272,7 +182,8 @@ const questions = [
         if (!isLast) {
           setCurrent(prev => prev + 1);
         } else {
-          setSubmitted(true);
+          //setSubmitted(true);
+          setShowLeadForm(true);
         }
       }, 300);
     }
@@ -307,7 +218,8 @@ const questions = [
     if (!isLast) {
       setCurrent(current + 1);
     } else {
-      setSubmitted(true);
+      //setSubmitted(true);
+      setShowLeadForm(true);
     }
   };
 
@@ -322,26 +234,59 @@ const questions = [
   };
 
 
-  const startQuiz = async () => {
+const startQuiz = () => {
+  setQuizStarted(true);
+};
+
+// ADD IT RIGHT HERE
+const submitLeadAndShowResults = async () => {
   if (!name.trim() || !email.trim()) {
-    setFormError("Please enter both name and email to begin.");
+    setFormError("Please enter both name and email to see your results.");
     return;
   }
+
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!emailOk) {
     setFormError("Please enter a valid email address.");
     return;
   }
-  setFormError("");
-  
-  setQuizStarted(true);
 
-saveLead(name.trim(), email.trim()).catch((err) => {
+  setFormError("");
+  setSavingLead(true);
+
+  try {
+    await saveLead(name.trim(), email.trim());
+    setShowLeadForm(false);
+    setSubmitted(true);
+  } catch (err) {
     console.warn("Lead save failed:", err);
+    setFormError("We couldn’t save your details. Please try again.");
+  } finally {
+    setSavingLead(false);
+  }
+};
+
+ // const startQuiz = async () => {
+ // if (!name.trim() || !email.trim()) {
+  //  setFormError("Please enter both name and email to begin.");
+  //  return;
+ // }
+
+//  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//  if (!emailOk) {
+//    setFormError("Please enter a valid email address.");
+//    return;
+//  }
+//  setFormError("");
+  
+//  setQuizStarted(true);
+
+// saveLead(name.trim(), email.trim()).catch((err) => {
+ //   console.warn("Lead save failed:", err);
     // optional: set a non-blocking message somewhere
     // setFormError("We couldn't save your details, but you can continue.");
-  });
-};
+//  });
+//};
 
   return (
     <div className="App">
@@ -349,8 +294,48 @@ saveLead(name.trim(), email.trim()).catch((err) => {
         <img src="/logo-placeholder.png" alt="Logo" className="logo" />
       </header>
 
+      {/* INTRO SCREEN — video centered + button */}
+      {showIntro && !quizStarted && !submitted && (
+        <section className="intro">
+          <h1 className="intro-title">Welcome to the Relationship Reflection Quiz</h1>
+
+          {/* Use one of the two options below */}
+
+          {/* Option A: YouTube/Vimeo embed */}
+          <div className="video-wrapper" role="region" aria-label="Intro video">
+            <iframe
+              className="video"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Introduction to the Relationship Reflection Quiz"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
+          {/* Option B: local/video file (uncomment and remove the iframe if you prefer)
+          <video className="video-file" controls playsInline preload="metadata">
+            <source src="/intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          */}
+
+          <button className="primary-btn" onClick={() => setShowIntro(false)}>
+            Take the Quiz
+          </button>
+        </section>
+      )}
+
       {/* Start Screen */}
-      {!quizStarted && !submitted && (
+      {!showIntro && !quizStarted && !submitted && !showLeadForm && (
+        <div className="start-screen">
+           <h2>Welcome to the Relationship Reflection Quiz</h2>
+            <p>Click below to begin.</p>
+             <button onClick={startQuiz}>Start Quiz</button>
+        </div>)}
+
+      {/*
+       {!showIntro && !quizStarted && !submitted && (
         <div className="start-screen">
           <h2>Welcome to the Relationship Reflection Quiz</h2>
           <p>Please enter your details to begin.</p>
@@ -365,14 +350,15 @@ saveLead(name.trim(), email.trim()).catch((err) => {
             placeholder="Your Email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-          />
+          />     
           {formError && <p style={{ color: "red" }}>{formError}</p>}
           <button onClick={startQuiz}>Start Quiz</button>
         </div>
-      )}
+      )} */}
+
 
       {/* Quiz Questions */}
-      {quizStarted && !submitted && (
+      {quizStarted && !submitted && !showLeadForm && (
         <div className="question-container">
           {!isFirst && (
             <button className="back-btn" onClick={() => setCurrent(current - 1)}>
@@ -381,6 +367,14 @@ saveLead(name.trim(), email.trim()).catch((err) => {
           )}
 
           <h2 className="question-text">{currentQuestion.question}</h2>
+          {currentQuestion.image && (
+            <img
+            src={currentQuestion.image}
+            alt={currentQuestion.alt || `Question ${current + 1} illustration`}
+            className="question-image"
+            loading="lazy"
+             />
+             )}
 
           <div className="options">
             {currentQuestion.options.map((opt, i) => {
@@ -431,6 +425,33 @@ saveLead(name.trim(), email.trim()).catch((err) => {
           </div>
         </div>
       )}
+
+{/* Lead Capture (after questions, before results) */}
+{showLeadForm && !submitted && (
+  <div className="start-screen">
+    <h2>Almost done 🎉</h2>
+    <p>Enter your details to view your personalized results.</p>
+
+    <input
+      type="text"
+      placeholder="Your Name"
+      value={name}
+      onChange={e => setName(e.target.value)}
+    />
+    <input
+      type="email"
+      placeholder="Your Email"
+      value={email}
+      onChange={e => setEmail(e.target.value)}
+    />
+
+    {formError && <p style={{ color: "red" }}>{formError}</p>}
+
+    <button onClick={submitLeadAndShowResults} disabled={savingLead}>
+      {savingLead ? "Saving..." : "Show My Results"}
+    </button>
+  </div>
+)}
 
       {/* Results */}
       {submitted && (
