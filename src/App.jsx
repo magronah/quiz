@@ -476,7 +476,7 @@ const results = submitted ? buildResults(answers) : null;
    {!showIntro && (
   <footer className="app-footer">
     <img
-      src="/logo.jpg"
+      src={`${import.meta.env.BASE_URL}images/logo.png`}
       alt="Beautiful Marriage Garden"
       className="footer-logo"
     />
@@ -490,6 +490,7 @@ const results = submitted ? buildResults(answers) : null;
   <section className="intro">
 
     <h1 className="intro-title">Single and Searching?</h1>
+    <h1 className="intro-title">You’re not behind.</h1>
     <h2 className="intro-subtitle">
       Discover what may be holding you back — and what God is preparing you for next.
     </h2>

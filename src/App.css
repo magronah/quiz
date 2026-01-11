@@ -1,10 +1,19 @@
 /* src/App.css */
+/* src/App.css */
 .App {
   font-family: Arial, sans-serif;
+
+  /* Keep your centered layout */
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 1rem;
+
+  /* NEW: allow footer to sit at the bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .header {
   text-align: center;
@@ -420,6 +429,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+
+@media (max-width: 480px) {
+  .intro {
+    padding-top: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+
+.intro-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
 }
 
 
