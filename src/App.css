@@ -1,4 +1,9 @@
 /* src/App.css */
+/*.App {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}*/
+
 /* src/App.css */
 .App {
   font-family: Arial, sans-serif;
@@ -6,23 +11,23 @@
   /* Keep your centered layout */
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem; 
 
   /* NEW: allow footer to sit at the bottom */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} 
 
 
-.header {
+/*.header {
   text-align: center;
   margin-bottom: 1rem;
-}
+}*/
 
-.logo {
+/*.logo {
   max-width: 150px;
-}
+}*/
 
 .question-text {
   font-size: 1.2rem;
@@ -60,39 +65,40 @@
   margin-top: 0.3rem;
 }
 
-.results {
+/* .results {
   padding: 1rem;
 }
+  
 
 .footer {
   text-align: center;
   margin-top: 2rem;
   color: #777;
   font-size: 0.9rem;
-}
+}*/
 
 
 /* Intro screen layout */
-.intro {
+/*.intro {
   max-width: 900px;
   margin: 0 auto;
   padding: 24px;
   text-align: center;
-}
+}*/
 
-.intro-title {
+/*.intro-title {
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 16px;
-}
+}/*
 
 /* Responsive 16:9 iframe wrapper */
-.video-wrapper {
+/* .video-wrapper {
   position: relative;
   width: 100%;
   max-width: 900px;
   margin: 0 auto 20px auto;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%; 
 }
 .video-wrapper .video {
   position: absolute;
@@ -100,15 +106,15 @@
   width: 100%;
   height: 100%;
   border: 0;
-}
+} */
 
 /* If you use <video> tag instead of iframe */
-.video-file {
+/* .video-file {
   width: 100%;
   max-width: 900px;
   margin: 0 auto 20px auto;
   display: block;
-}
+} */
 
 .primary-btn {
   padding: 12px 20px;
@@ -118,10 +124,11 @@
   cursor: pointer;
 }
 
+/*
 .form-error {
   color: red;
   margin: 8px 0;
-}
+} */
 
 
 .question-image {
@@ -317,11 +324,13 @@
   }
 }
 
+/*
 .audiobook-preview {
   margin-top: 16px;
   text-align: center;
-}
+} */
 
+/*
 .audiobook-image {
   width: 100%;
   max-width: 320px;
@@ -330,13 +339,13 @@
   display: block;
   margin: 0 auto 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
+}*/
 
-.audiobook-caption {
+/*.audiobook-caption {
   font-size: 14px;
   opacity: 0.85;
   line-height: 1.4;
-}
+} */
 
 .audiobook-preview {
   margin-top: 18px;
@@ -385,12 +394,12 @@
 }
 
 
-.intro {
+/*.intro {
   max-width: 720px;
   margin: 0 auto;
   padding: 24px;
   text-align: center;
-}
+}*/
 
 .intro-hero-image {
   width: 100%;
@@ -406,21 +415,22 @@
   margin-bottom: 18px;
 }
 
-.header {
+/*.header {
   padding: 12px 0;
   opacity: 0.85;
-}
+}*/
 
-.logo {
+/*.logo {
   max-height: 36px;
-}
+}*/
 
 .intro-title {
-  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.6rem, 5.5vw, 2.6rem);
   white-space: nowrap;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
+
 
 .intro {
   padding-top: 1.5rem; /* reduce if currently larger */
@@ -429,6 +439,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 
@@ -446,4 +457,71 @@
   margin-bottom: 1.25rem;
 }
 
+/* Footer logo */
+/*
+.app-footer {
+  margin-top: auto;
+  padding: 10px 0 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+} */
 
+/* .footer-logo {
+  height: 28px;     
+  width: auto;
+  max-width: 140px;  
+  object-fit: contain;
+} */
+
+/* 
+@media (max-width: 480px) {
+  .footer-logo {
+    height: 22px;
+    max-width: 120px;
+  }
+}*/
+
+.brand-header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+}
+
+/*
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 50;
+} */
+
+.brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.brand-name {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Make sure the absolute header doesn’t overlap content */
+/* .intro, .start-screen, .results {
+  padding-top: 60px;
+}
+*/

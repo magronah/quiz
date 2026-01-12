@@ -5,14 +5,22 @@ import "./App.css";
 // Replace with your Apps Script Web App URL
 const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbxQCYgKrkmzOI_oSKIkQa7esAcIaESx9e943AvR2Fthj61FtakwQL7KBcXyHxE1UEW79g/exec";
 
-async function saveLead(name, email) {
+async function saveLead(name, email, answers,results) {
   // Send URL-encoded form data (simple request → no preflight)
+  // Build a payload (URL-encoded to avoid preflight)
   const payload = new URLSearchParams({
     name,
     email,
     source: "Relationship Reflection Quiz",
-    userAgent: navigator.userAgent
+    userAgent: navigator.userAgent,
     // ip: include if you fetch one client-side
+    
+    // Store answers as JSON string (easy to parse in Apps Script)
+    answers: JSON.stringify(answers),
+    // Optional: store computed results too
+    tags: JSON.stringify(results?.tags || []),
+    chapters: JSON.stringify(results?.chapters || []),
+    messages: JSON.stringify(results?.messages || [])
   });
 
   const res = await fetch(LEAD_ENDPOINT, {
@@ -418,7 +426,8 @@ const submitLeadAndShowResults = async () => {
   setSavingLead(true);
 
   try {
-    await saveLead(name.trim(), email.trim());
+    const computed = buildResults(answers); // compute once
+    await saveLead(name.trim(), email.trim(), answers, computed);
     setShowLeadForm(false);
     setSubmitted(true);
   } catch (err) {
@@ -470,21 +479,27 @@ const buildResults = (answers) => {
 
 const results = submitted ? buildResults(answers) : null;
 
-  return (
-  
-    <div className="App">
-   {!showIntro && (
-  <footer className="app-footer">
+const BrandHeader = () => (
+  <div className="brand-header">
     <img
       src={`${import.meta.env.BASE_URL}images/logo.png`}
       alt="Beautiful Marriage Garden"
-      className="footer-logo"
+      className="brand-logo"
     />
-  </footer>
-)}
+    <span className="brand-name">Beautiful Marriage Garden</span>
+  </div>
+);
 
+const showBrandHeader =
+  (showIntro && !quizStarted && !submitted) ||
+  (showLeadForm && !submitted) ||
+  (submitted && results);
 
-     
+  return (
+  
+    <div className="App">  
+        {showBrandHeader && <BrandHeader />}
+
      {/* INTRO SCREEN — high-conversion version */}
 {showIntro && !quizStarted && !submitted && (
   <section className="intro">
@@ -503,6 +518,11 @@ const results = submitted ? buildResults(answers) : null;
     >
       Take the Quiz
     </button>
+    <p className="intro-description">
+      Answer 10 quick questions to receive a personalized reflection
+      based on where you are emotionally, spiritually, and relationally.
+    </p>
+
     {/* Hero image */}
     <img
       src={`${import.meta.env.BASE_URL}images/cover_page.png`}
@@ -510,11 +530,6 @@ const results = submitted ? buildResults(answers) : null;
       className="intro-hero-image"
       loading="eager"
     />
-
-    <p className="intro-description">
-      Answer 10 quick questions to receive a personalized reflection
-      based on where you are emotionally, spiritually, and relationally.
-    </p>
 
     <p className="intro-meta">
       ⏱ Takes less than 3 minutes • 🙏 Faith-centered • 💛 Private
@@ -759,7 +774,6 @@ const results = submitted ? buildResults(answers) : null;
   </div>
 </section>
 
-
         {/* Optional call-to-action area */}
         <section className="report-section report-cta">
           <h3 className="section-title">Next Step</h3>
@@ -780,8 +794,16 @@ const results = submitted ? buildResults(answers) : null;
     </div>
   </div> 
 )}
+{/*  {!showIntro && (
+  <footer className="app-footer">
+    <img
+      src={`${import.meta.env.BASE_URL}images/logo.png`}
+      alt="Beautiful Marriage Garden"
+      className="footer-logo"
+    />
+  </footer>
+)} */}
 </div>
-  );
-}
+  );}
 
 export default App;
